@@ -1,24 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyMovement : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
 
     private Vector3 _targetPosition;
     private float _distanceThreshold = 0.01f;
-    private bool _isMoving;
+    private bool _isMoving = false;
 
-    private void Start()
+    public void Init(Vector3 targetPosition)
     {
-        TargetPoint[] targetpoints = FindObjectsByType<TargetPoint>(FindObjectsSortMode.None);
-        
-        if (targetpoints.Length > 0)
-        {
-            _targetPosition = targetpoints[0].transform.position;
-            _isMoving = true;
-        }
+        _targetPosition = targetPosition;
+        _isMoving = true;
     }
 
     private void Update()

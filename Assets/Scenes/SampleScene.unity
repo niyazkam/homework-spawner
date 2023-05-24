@@ -722,13 +722,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11653bd821108cd438e1856d4340a18f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPrefab: {fileID: 318292115760189102, guid: 71ad9b231576fcc4ba62f201e6be138f, type: 3}
+  _template: {fileID: 511094485774882837, guid: 71ad9b231576fcc4ba62f201e6be138f, type: 3}
   _enemiesParent: {fileID: 133729894}
   _spawnPoints:
   - {fileID: 276068933}
   - {fileID: 1217217710}
   - {fileID: 11388219}
   - {fileID: 477199683}
+  _target: {fileID: 1762795447}
   _enemiesCount: 10
   _secondsToSpawn: 1
 --- !u!4 &1440985453

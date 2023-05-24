@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _enemyPrefab;
+    [SerializeField] private Enemy _template;
     [SerializeField] private Transform _enemiesParent;
     [SerializeField] private Transform[] _spawnPoints;
+    [SerializeField] private Transform _target;
     [SerializeField] private int _enemiesCount;
     [SerializeField] private int _secondsToSpawn;
 
@@ -22,7 +23,8 @@ public class EnemySpawner : MonoBehaviour
             yield return new WaitForSeconds(_secondsToSpawn);
             int index = Random.Range(0, _spawnPoints.Length);
             Vector3 spawnPosition = _spawnPoints[index].position;
-            Instantiate(_enemyPrefab, spawnPosition, Quaternion.identity, _enemiesParent);
+            Enemy spawnedEnemy = Instantiate(_template, spawnPosition, Quaternion.identity, _enemiesParent);
+            spawnedEnemy.Init(_target.position);
         }
     }
 }
